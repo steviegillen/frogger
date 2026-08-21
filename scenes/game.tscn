@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://sp3g4ttoifko"]
 
+[ext_resource type="Script" uid="uid://cd80dxbgsjb3v" path="res://scripts/main/game.gd" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://yxudw1l8ouxf" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cm67vwghwkh7" path="res://scenes/green_tree.tscn" id="3_lnu2h"]
@@ -10,7 +11,11 @@ size = Vector2(20, 680)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0a6h"]
 size = Vector2(426, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ernlh"]
+size = Vector2(383, 127)
+
 [node name="Game" type="Node2D" unique_id=29226810]
+script = ExtResource("1_lbhrr")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1358247745]
 texture = ExtResource("1_uwrxv")
@@ -46,3 +51,17 @@ shape = SubResource("RectangleShape2D_l0a6h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Border Top" unique_id=2097667994]
 position = Vector2(-1, -330)
 shape = SubResource("RectangleShape2D_l0a6h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=658498729]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=40308690]
+position = Vector2(-0.5, -256.5)
+shape = SubResource("RectangleShape2D_ernlh")
+
+[node name="Timer" type="Node" parent="." unique_id=304345681]
+
+[node name="CarTimer" type="Timer" parent="Timer" unique_id=2116593900]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
