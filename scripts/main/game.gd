@@ -1,11 +1,18 @@
 extends Node2D
 
 var car_scene := preload("res://scenes/car.tscn")
-var game_timer = 0
+var game_time := 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
-	print("has entered...")
+	call_deferred("change_scene")
+	if Global.time == 0:
+		Global.time = game_time
+	elif game_time < Global.time:
+		Global.time = game_time
+
+func change_scene():
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
+	
 
 
 func _on_car_timer_timeout() -> void:
@@ -15,10 +22,10 @@ func _on_car_timer_timeout() -> void:
 	$Objects.add_child(car)
 	car.connect("body_entered", go_to_title)
 
-func go_to_title(body):
-	print("Player knocked down 💥🚕")
+func go_to_title(_body):
+	call_deferred("change_scene")
 
 
 func _on_game_timer_timeout() -> void:
-	game_timer += 1
-	$CanvasLayer/Label.text = str(game_timer)
+	game_time += 1
+	$CanvasLayer/Label.text = str(game_time)

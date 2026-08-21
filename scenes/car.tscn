@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ded8huv3lr1a7" path="res://graphics/cars/yellow.png" id="1_c35m8"]
 [ext_resource type="Script" uid="uid://dx16xjf8jh4y5" path="res://scripts/cars/car.gd" id="1_qt2eu"]
+[ext_resource type="AudioStream" uid="uid://cn6rthadbthn8" path="res://audio/car.mp3" id="3_50v30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35jxs"]
 size = Vector2(20, 15)
@@ -20,5 +21,12 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_35jxs")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=916351158]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1549608691]
+stream = ExtResource("3_50v30")
+volume_db = -20.0
+autoplay = true
+max_distance = 100.0
+parameters/looping = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

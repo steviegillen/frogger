@@ -22,7 +22,7 @@ size = Vector2(20, 680)
 size = Vector2(426, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ernlh"]
-size = Vector2(383, 127)
+size = Vector2(383, 176)
 
 [node name="Game" type="Node2D" unique_id=29226810]
 script = ExtResource("1_lbhrr")
@@ -204,7 +204,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/FinishAea2D" unique_id=40308690]
-position = Vector2(-0.5, -256.5)
+position = Vector2(-0.5, -232)
 shape = SubResource("RectangleShape2D_ernlh")
 
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=2035275830]

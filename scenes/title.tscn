@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cx0esatkaru8s"]
 
+[ext_resource type="Script" uid="uid://by01rhci74s5k" path="res://scripts/title.gd" id="1_p6dhs"]
 [ext_resource type="FontFile" uid="uid://bfaxbltob0ytk" path="res://fonts/Handjet-Bold.ttf" id="1_wosw1"]
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_p6dhs"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p6dhs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1917128569]
 layout_mode = 1
@@ -67,5 +69,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_wosw1")
 theme_override_font_sizes/font_size = 48
-text = "Quickest Time: 12s"
+text = "Quickest Time: 0s"
 horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1199301753]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = 691.0
+offset_right = 78.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_wosw1")
+theme_override_font_sizes/font_size = 33
+text = "Press SPACE to start"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1185595267]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
