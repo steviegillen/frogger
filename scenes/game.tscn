@@ -12,7 +12,7 @@ size = Vector2(426, 20)
 
 [node name="Game" type="Node2D" unique_id=29226810]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1358247745]
+[node name="Background" type="Sprite2D" parent="." unique_id=1358247745]
 texture = ExtResource("1_uwrxv")
 
 [node name="Player" parent="." unique_id=1704231043 instance=ExtResource("2_yqjtg")]
