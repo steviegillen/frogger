@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjf0d534k6o51"]
+
+[ext_resource type="Texture2D" uid="uid://b8fq8sgkmu4dx" path="res://graphics/objects/green car.png" id="1_kp7br"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35jxs"]
+size = Vector2(12, 18)
+
+[node name="ParkedCar" type="StaticBody2D" unique_id=2038540105]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852563051]
+texture = ExtResource("1_kp7br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=88895742]
+shape = SubResource("RectangleShape2D_35jxs")

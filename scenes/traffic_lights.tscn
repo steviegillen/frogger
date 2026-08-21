@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0r0v7eiqfwr0"]
+
+[ext_resource type="Texture2D" uid="uid://cfe22lwgaf1k2" path="res://graphics/objects/traffic.png" id="1_5jycl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35jxs"]
+size = Vector2(2, 11)
+
+[node name="TrafficLights" type="StaticBody2D" unique_id=1566511232]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4890048]
+texture = ExtResource("1_5jycl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099379513]
+position = Vector2(4, 7.5)
+shape = SubResource("RectangleShape2D_35jxs")

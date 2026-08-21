@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://sadiey88l5wy"]
+
+[ext_resource type="Texture2D" uid="uid://b778fphjcav0" path="res://graphics/objects/light.png" id="1_epjdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35jxs"]
+size = Vector2(2, 10)
+
+[node name="StreetLight" type="StaticBody2D" unique_id=1700199960]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1103461883]
+texture = ExtResource("1_epjdn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1298393511]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_35jxs")
