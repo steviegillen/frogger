@@ -1,6 +1,7 @@
 extends Node2D
 
 var car_scene := preload("res://scenes/car.tscn")
+var game_timer = 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
@@ -16,3 +17,8 @@ func _on_car_timer_timeout() -> void:
 
 func go_to_title(body):
 	print("Player knocked down 💥🚕")
+
+
+func _on_game_timer_timeout() -> void:
+	game_timer += 1
+	$CanvasLayer/Label.text = str(game_timer)
